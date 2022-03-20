@@ -16,6 +16,6 @@ public class UserController {
 	@RequestMapping("1")
 	@ResponseBody
 	public String user(){
-		return "유저 한명입니다!!!!";
+		return "유저 한명입니다";
 	}
 }
