@@ -15,6 +15,12 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 
+	@RequestMapping("test")
+	@ResponseBody
+	public String test(){
+		return "test";
+	}
+
 	@RequestMapping("")
 	@ResponseBody
 	public List<User> users(){
