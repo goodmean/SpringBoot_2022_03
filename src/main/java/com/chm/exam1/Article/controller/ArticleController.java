@@ -29,7 +29,7 @@ public class ArticleController {
 		return article.get();
 	}
 
-	@RequestMapping("doModify")
+	public Article doModify(long id, String title, String body) {
 	@ResponseBody
 	public Article showModify(long id, String title, String body) {
 		Article article = articleRepository.findById(id).get();
@@ -45,5 +45,12 @@ public class ArticleController {
 		articleRepository.save(article);
 
 		return article;
+	}
+
+	@RequestMapping("doDelete")
+	@ResponseBody
+	public String doDelete(long id) {
+		articleRepository.deleteById(id);
+		return "%d번 게시물이 삭제되었습니다.".formatted(id);
 	}
 }
